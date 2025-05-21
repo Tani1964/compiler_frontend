@@ -6,12 +6,14 @@ const Tree = () => {
   const { data } = useContext(DataContext);
   const [treeData, setTreeData] = useState(null);
   const [error, setError] = useState(null);
+  const theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   const svgRef = useRef(null);
   const containerRef = useRef(null);
   
   // Parse and validate tree data
   useEffect(() => {
     try {
+      console.log(theme)
       if (data && data[1] && data[1][1]) {
         setTreeData(data[1][1]);
         setError(null);
@@ -119,7 +121,7 @@ const Tree = () => {
         .attr("text-anchor", "middle")
         .attr("font-size", "14px")
         .attr("font-family", "sans-serif")
-        .style("fill", "#fff")
+        .style("fill", theme == "light" ? "#000" : "#fff")
         .text(d => d.data.operator ? d.data.operator : d.data);
       
       // Add a subtle initial animation

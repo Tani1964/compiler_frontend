@@ -1,7 +1,13 @@
-const Footer = () => {
-  return (
-    <div className="border-2 shadow-xl h-[5%] flex justify-center">copyright@Department of computer science 2024 </div>
-  )
-}
+import React from "react";
 
-export default Footer
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+  
+  return (
+    <div className="border-2 shadow-xl py-3 flex justify-center items-center">
+      copyright © Department of Computer Science {currentYear}
+    </div>
+  );
+};
+
+export default Footer;
