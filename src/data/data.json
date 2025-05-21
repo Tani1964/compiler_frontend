@@ -1,0 +1,27 @@
+{
+  "lexemes": "[2, +, 3, *, 4]",
+  "interpreter": "14",
+  "parsetree": {
+    "top": "6",
+    "operator": "+",
+    "children": [
+      {
+        "top": "95",
+        "operator": "-",
+        "children": [{ "operator": "28" }, { "operator": "71" }]
+      },
+      {
+        "top": "16",
+        "operator": "*",
+        "children": [
+          { "operator": "53" },
+          {
+            "top": "38",
+            "operator": "/",
+            "children": [{ "operator": "5" }, { "operator": "20" }]
+          }
+        ]
+      }
+    ]
+  }
+}
